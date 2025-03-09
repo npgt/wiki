@@ -3,40 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            display: flex;
-            gap: 20px;
-        }
-        #sidebar {
-            width: 200px;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-        }
-        #sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        #sidebar a {
-            color: blue;
-            text-decoration: none;
-        }
-        #sidebar a:hover {
-            text-decoration: underline;
-        }
-        #content {
-            margin-left: 240px;
-            max-width: 800px;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+    <header>
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+    </header>
     <div id="sidebar">
         <h3>Oldalak</h3>
         <ul>
+            <li><a href="/">Kezdőlap</a></li>
             {% for page in site.pages %}
                 {% if page.path contains '.md' and page.path != 'index.md' %}
                     <li><a href="{{ page.url }}">{{ page.title }}</a></li>
@@ -47,5 +24,8 @@
     <div id="content">
         {{ content }}
     </div>
+    <footer>
+        <p>&copy; {{ "now" | date: "%Y" }} - {{ site.title }}</p>
+    </footer>
 </body>
 </html>
