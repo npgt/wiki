@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
+        <input type="text" id="searchInput" placeholder="Keresés az oldalak között..." onkeyup="searchPages()">
+        <button id="themeToggle" onclick="toggleTheme()">Téma váltása</button>
     </header>
     <div id="sidebar">
         <h3>Oldalak</h3>
-        <ul>
-            <li><a href="/">Kezdőlap</a></li>
+        <ul id="pageList">
             {% for page in site.pages %}
                 {% if page.path contains '.md' and page.path != 'index.md' %}
-                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                    <li class="page-item" data-title="{{ page.title | downcase }}"><a href="{{ page.url }}">{{ page.title }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -25,7 +27,7 @@
         {{ content }}
     </div>
     <footer>
-        <p>&copy; {{ "now" | date: "%Y" }} - {{ site.title }}</p>
+        <p>© {{ "now" | date: "%Y" }} - {{ site.title }}</p>
     </footer>
 </body>
 </html>
