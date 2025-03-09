@@ -9,29 +9,31 @@
     <script src="{{ site.baseurl }}/assets/js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>{{ site.title }}</h1>
-        <p>{{ site.description }}</p>
-        <input type="text" id="searchInput" placeholder="Keresés az oldalak között..." onkeyup="searchPages()">
-        <button id="themeToggle" onclick="toggleTheme()">
-            <i class="fas fa-sun"></i>
-        </button>
-    </header>
-    <div id="sidebar">
-        <h3>Oldalak</h3>
-        <ul id="pageList">
-            {% for page in site.pages %}
-                {% if page.path contains '.md' and page.path != 'index.md' %}
-                    <li class="page-item" data-title="{{ page.title | downcase }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+    <div class="container">
+        <header>
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.description }}</p>
+            <input type="text" id="searchInput" placeholder="Keresés az oldalak között..." onkeyup="searchPages()">
+            <button id="themeToggle" onclick="toggleTheme()">
+                <i class="fas fa-sun"></i>
+            </button>
+        </header>
+        <aside id="sidebar">
+            <h3>Oldalak</h3>
+            <ul id="pageList">
+                {% for page in site.pages %}
+                    {% if page.path contains '.md' and page.path != 'index.md' %}
+                        <li class="page-item" data-title="{{ page.title | downcase }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </aside>
+        <main id="content">
+            {{ content }}
+        </main>
+        <footer>
+            <p>© {{ "now" | date: "%Y" }} - {{ site.title }}</p>
+        </footer>
     </div>
-    <div id="content">
-        {{ content }}
-    </div>
-    <footer>
-        <p>© {{ "now" | date: "%Y" }} - {{ site.title }}</p>
-    </footer>
 </body>
 </html>
