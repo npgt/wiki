@@ -1,7 +1,7 @@
 # Alapvető webhely információk
 title: Az Én Wikim
 description: Sötét témájú Markdown wiki keresővel és téma váltóval
-baseurl: "wiki" # Ha nem almappában hosztolod, üresen hagyd; pl. "/my-wiki" ha almappában van
+baseurl: "" # Ha nem almappában hosztolod, üresen hagyd; pl. "/my-wiki" ha almappában van
 url: "https://npgt.github.io" # A te GitHub Pages URL-ed
 
 # Markdown és renderelési beállítások
