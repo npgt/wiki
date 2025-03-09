@@ -1,6 +1,37 @@
+# Alapvető webhely információk
 title: Az Én Wikim
 description: Sötét témájú Markdown wiki keresővel és téma váltóval
+baseurl: "wiki" # Ha nem almappában hosztolod, üresen hagyd; pl. "/my-wiki" ha almappában van
+url: "https://npgt.github.io" # A te GitHub Pages URL-ed
+
+# Markdown és renderelési beállítások
+markdown: kramdown
+kramdown:
+  input: GFM # GitHub Flavored Markdown támogatása (táblázatok, kódblokkok stb.)
+  hard_wrap: false # Ne törje a sorokat <br> taggal
+  syntax_highlighter: rouge # Szintaxis kiemelés kódblokkokhoz
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+# Téma beállítások (opcionális, ha nem használunk előre definiált témát)
+theme: jekyll-theme-minimal # Minimalista téma, de a saját CSS-ünk felülírja
+# Ha nem akarsz előre definiált témát, ezt kihagyhatod, és teljesen a saját CSS-re támaszkodhatsz
+
+# Kollekciók az oldalak kezeléséhez
 collections:
   pages:
-    output: true
-    permalink: /:title
+    output: true # Minden oldal generálódik HTML-ként
+    permalink: /:title # Az oldalak URL-je a címük alapján (pl. /test)
+
+# Kizárások (fájlok, amiket nem kell generálni)
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# GitHub Pages specifikus beállítások (opcionális)
+github:
+  is_project_page: false # Ha nem projektoldal, false
+
+# Statikus fájlok elérési útja (opcionális, ha szükséges)
+# assets_dir: "/assets"
