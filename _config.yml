@@ -1,11 +1,6 @@
 title: Az Én Wikim
-description: Egyedi Markdown wiki GitHub Pages-en
-baseurl: "/wiki" # Ha nem a gyökérben hosztolod
-url: "https://npgt.github.io"
-theme: jekyll-theme-minimal # Vagy más téma
-markdown: kramdown # Markdown parser (kramdown a GitHub Pages alapértelmezettje)
-exclude: [README.md, Gemfile, Gemfile.lock] # Fájlok kizárása a generálásból
+description: Sötét témájú Markdown wiki keresővel és téma váltóval
 collections:
   pages:
     output: true
-    permalink: /:title # Oldalak URL formátuma (pl. /test)
+    permalink: /:title
