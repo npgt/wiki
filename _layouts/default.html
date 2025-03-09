@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="/assets/js/script.js" defer></script>
 </head>
 <body>
@@ -11,7 +13,9 @@
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
         <input type="text" id="searchInput" placeholder="Keresés az oldalak között..." onkeyup="searchPages()">
-        <button id="themeToggle" onclick="toggleTheme()">Téma váltása</button>
+        <button id="themeToggle" onclick="toggleTheme()">
+            <i class="fas fa-sun"></i> <!-- Alapértelmezett: nap ikon -->
+        </button>
     </header>
     <div id="sidebar">
         <h3>Oldalak</h3>
