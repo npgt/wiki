@@ -18,21 +18,21 @@ function toggleTheme() {
     const body = document.body;
     const isDark = body.classList.toggle('dark-theme');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateButtonText();
+    updateThemeIcon();
 }
 
-// Gomb szövegének frissítése
-function updateButtonText() {
+// Ikon frissítése
+function updateThemeIcon() {
     const button = document.getElementById('themeToggle');
     const isDark = document.body.classList.contains('dark-theme');
-    button.textContent = isDark ? 'Világos téma' : 'Sötét téma';
+    button.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
 }
 
-// Téma betöltése az oldal indulásakor
+// Téma és ikon betöltése az oldal indulásakor
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
     }
-    updateButtonText();
+    updateThemeIcon();
 });
