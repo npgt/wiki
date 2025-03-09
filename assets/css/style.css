@@ -35,7 +35,7 @@ body.dark-theme {
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background-color: var(--bg-color);
+    background: linear-gradient(to bottom, var(--header-bg), var(--bg-color));
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
