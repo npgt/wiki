@@ -1,5 +1,5 @@
 ---
 title: testdoc1
-parent: testmappa1
+parent: Testmappa1
 nav_order: 1
 ---
