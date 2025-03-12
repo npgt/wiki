@@ -2,7 +2,6 @@
 title: Home
 nav_order: 1
 description: "Furcsa Titkok Kezdőlap"
-permalink: /
 layout: home
 ---
 
